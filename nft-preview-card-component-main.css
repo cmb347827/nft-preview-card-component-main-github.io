@@ -1,0 +1,97 @@
+*, ::before, ::after {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font: 400 18px "Outfit", sans-serif;
+  background-color: MidnightBlue;
+  background-color: #0d192b; }
+
+h1 {
+  color: Snow;
+  color: white;
+  font-size: 28px; }
+  h1:hover {
+    color: Cyan;
+    color: #00fff7; }
+
+main {
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center; }
+  main .container {
+    border-radius: 15px;
+    width: 375px;
+    background-color: Navy;
+    background-color: #182c49; }
+    main .container .equil {
+      margin: 15px;
+      height: 350px; }
+    main .container .margin-15 {
+      margin: 0 15px; }
+    main .container span.cyan-overlay {
+      background-color: Cyan;
+      background-color: #00fff7;
+      display: none;
+      width: 315px;
+      height: 315px;
+      position: relative;
+      bottom: 315px;
+      margin-bottom: -315px; }
+    main .container .equil img, main .container .cyan-overlay {
+      border-radius: 15px; }
+    main .container .equil svg {
+      display: none;
+      width: 48px;
+      height: 48px;
+      position: relative;
+      bottom: 48px;
+      margin-bottom: -48px; }
+    main .container .width {
+      width: 100%; }
+    main .container .cyan {
+      color: Cyan;
+      color: #00fff7; }
+    main .container .soft-blue {
+      color: LightBlue;
+      color: #8bacda; }
+    main .container p {
+      font-weight: 300; }
+    main .container #avatar {
+      display: block;
+      margin: 0;
+      width: 40px;
+      height: 40px;
+      border: 2px solid white;
+      border-radius: 50%; }
+    main .container hr {
+      width: 100%;
+      height: 2px;
+      background-color: DarkBlue;
+      background-color: #5576a5; }
+    main .container #creator {
+      color: Snow;
+      color: white; }
+      main .container #creator:hover {
+        color: Cyan;
+        color: #00fff7; }
+  @media screen and (min-width: 1440px) {
+    main .container .equil:hover .cyan-overlay {
+      display: block;
+      opacity: 0.5; }
+    main .container .equil:hover svg {
+      display: block;
+      margin: auto;
+      top: -185px; } }
+
+footer .attribution {
+  font-size: 11px;
+  text-align: center; }
+footer .attribution a {
+  color: #3e52a3; }
+
+/*# sourceMappingURL=nft-preview-card-component-main.css.map */

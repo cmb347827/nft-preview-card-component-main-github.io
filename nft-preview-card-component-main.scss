@@ -1,0 +1,156 @@
+$container__form-xs: 375;
+$container__form-sm: 576;
+$container__form-md: 768;
+$container__form-lg: 992;
+$container__form-xl: 1200;
+$container__form-xxl: 1440;
+
+$font-size-18: 18px;
+$font-size-28: 28px;
+$font-weight-lighter: 300;
+$font-weight-normal: 400;
+
+$colors : (Soft blue: hsl(215, 51%, 70%),  Cyan: hsl(178, 100%, 50%), Very dark blue1: hsl(217, 54%, 11%), Very dark blue2: hsl(216, 50%, 16%), Very dark blue3: hsl(215, 32%, 27%), White: hsl(0, 0%, 100%));
+$fallback-colors: (LightBlue Cyan MidnightBlue Navy DarkBlue Snow);
+
+@mixin bg-color($color,$fallback-color){
+    background-color: $fallback-color;
+    background-color: $color;
+}
+@mixin font-color($color,$fallback-color){
+    color: $fallback-color;
+	color: $color;
+}
+@mixin width($grid-size){
+    width: $grid-size * 1px;
+}
+@mixin border-radius($radius){
+    border-radius: $radius;
+}
+@mixin margin($args...){
+    margin: $args;
+}
+@mixin padding($args...){
+    padding: $args;
+}
+
+
+*,::before,::after{
+	box-sizing:border-box;
+}
+html, body{
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	font: $font-weight-normal $font-size-18 'Outfit', sans-serif;
+	@include bg-color(map-get($colors, Very dark blue1), nth($fallback-colors, 3));
+	
+	@media screen and (max-width: $container__form-lg * 1px){
+	    
+	}
+	
+	
+}
+
+h1{
+    @include font-color(map-get($colors, White), nth($fallback-colors, 6));
+	font-size: $font-size-28;
+	&:hover{
+	    @include font-color(map-get($colors, Cyan), nth($fallback-colors, 2));
+	}
+}
+
+main{
+
+    overflow: auto;
+	width: 100%;
+	min-height: 100vh;
+    display: grid;
+    place-content: center;	
+	
+	.container{
+	    @include border-radius(15px);
+	    .equil{
+		    //with align-items-center.
+		    @include margin(15px);
+			height: 350px;
+		}
+		.margin-15{
+		    @include margin(0 15px);
+		}
+		span.cyan-overlay{
+			@include bg-color(map-get($colors, Cyan), nth($fallback-colors, 2));
+			display: none;
+            width: 315px;
+			height: 315px;
+			position: relative;
+			bottom: 315px;
+			margin-bottom: -315px;
+		}
+		.equil img,.cyan-overlay{
+		    @include border-radius(15px);
+		
+		}
+		.equil svg{
+		    display:none;
+			width: 48px;
+			height: 48px;
+			position:relative;
+			bottom:48px;
+			margin-bottom: -48px;
+		}
+		.width{
+		   width: 100%;
+		}
+		.cyan{
+		    @include font-color(map-get($colors, Cyan), nth($fallback-colors, 2));
+		}
+		.soft-blue{
+		    @include font-color(map-get($colors, Soft blue), nth($fallback-colors, 1));
+		}
+		p{
+		    font-weight: $font-weight-lighter;
+		}
+		#avatar{
+		    display:block;
+			margin: 0;
+			width: 40px;
+			height: 40px;
+			border: 2px solid hsl(0, 0%, 100%);
+			@include border-radius(50%);
+		}
+		hr{
+		   width: 100%;
+		   height: 2px;
+		   @include bg-color(lighten(map-get($colors, Very dark blue3),22), nth($fallback-colors, 5));
+		}
+	    @include width($container__form-xs);
+		@include bg-color(lighten(map-get($colors, Very dark blue2),3), nth($fallback-colors, 4));
+		#creator{
+		    @include font-color(map-get($colors, White), nth($fallback-colors, 6));
+			&:hover{
+			    @include font-color(map-get($colors, Cyan), nth($fallback-colors, 2));
+			}
+		}
+	}
+	
+	@media screen and (min-width: $container__form-xxl * 1px){ 
+	    .container{
+	        .equil:hover .cyan-overlay{
+			    display:block;
+			    opacity:0.5;
+			}
+			.equil:hover svg{
+			    display: block;
+				@include margin(auto);
+				top: -185px;
+			}
+		}
+    }
+	
+}
+footer{
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+}
+//SCSS beautified at https://codebeautify.org/scss-beautifier on 2/10/2023
